@@ -30,13 +30,9 @@ export class LanguageService {
       .addSelect('languagetype.englishLang ', 'englishLang')
       .addSelect('languagetype.hindiLang ', 'hindiLang')
       .innerJoin(modtype, 'mt', 'languagetype.moduleId = mt.id')
-      // .groupBy('mt.module')
       .getRawMany();
   }
 
-  // async findOnes(id: number) {
-  //   return await this.languageRepository.findOne({ where: { id: id } });
-  // }
 
   async findOne(id: number) {
     return await this.languageRepository
